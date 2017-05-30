@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    AuthModule,
     CoreModule
   ],
   providers: [],
