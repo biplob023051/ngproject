@@ -1,3 +1,75 @@
-<p>
-  signup works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignup()">
+        <div formGroupName="name">
+        	<div class="form-group">
+	          <label for="username">First Name</label>
+	          <input
+	            type="text"
+	            id="fname"
+	            class="form-control"
+	            placeholder="First Name"
+	            formControlName="fname"
+	            >
+	        </div>
+	        <div class="form-group">
+	          <label for="username">Last Name</label>
+	          <input
+	            type="text"
+	            id="lname"
+	            class="form-control"
+	            placeholder="Last Name"
+	            formControlName="lname"
+	            >
+	        </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Email"
+            formControlName="email"
+            >
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            formControlName="password"
+            >
+        </div>
+        <div class="form-group">
+	        <label for="gender">Your Gender</label>
+	        <div class="radio" *ngFor="let gender of genders">
+	          <label>
+	            <input
+	              type="radio"
+	              formControlName="gender"
+	              [value]="gender">{{ gender | capitalize }}
+	          </label>
+	        </div>
+        </div>
+        <div formArrayName="hobbies">
+        	<label for="hobbies">Your hobbies</label>
+        	<div class="form-group" *ngFor="let control of signUpForm.get('hobbies').controls; let i= index">
+        		<input type="text" class="form-control" [formControlName]="i" [placeholder]="'Enter hobby '+ (i+1)">
+        	</div>
+        	<button type="button" class="btn btn-success pull-right" (click)="addMoreHobbies()">Add More Hobbies</button>
+        </div>
+        <div class="form-group">
+	        <button 
+	        	class="btn btn-primary" 
+	        	type="submit"
+	        	[disabled]="!signUpForm.valid"
+	        	>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
