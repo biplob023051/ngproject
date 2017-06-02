@@ -57,7 +57,7 @@
         </div>
         <div formArrayName="hobbies">
         	<label for="hobbies">Your hobbies</label>
-        	<div class="form-group" *ngFor="let control of signUpForm.get('hobbies').controls; let i= index">
+        	<div class="form-group" *ngFor="let control of signUpForm.get('hobbies')['controls']; let i= index">
         		<input type="text" class="form-control" [formControlName]="i" [placeholder]="'Enter hobby '+ (i+1)">
         	</div>
         	<button type="button" class="btn btn-success pull-right" (click)="addMoreHobbies()">Add More Hobbies</button>
