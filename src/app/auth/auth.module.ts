@@ -4,19 +4,19 @@ import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { AuthRoutingModule } from './auth-routing.module';
-import { CapitalizePipe } from '../shared/capitalize.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
 	declarations: [
 		SignupComponent,
-    	SigninComponent,
-    	CapitalizePipe
+    	SigninComponent
 	],
 	imports: [
 		FormsModule,
 		ReactiveFormsModule,
 		CommonModule,
 		AuthRoutingModule,
+		SharedModule
 	]
 })
 export class AuthModule{}

@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownDirective } from './dropdown.directive';
+import { CapitalizePipe } from './capitalize.pipe';
 @NgModule({
 	declarations: [
-		DropdownDirective
+		DropdownDirective,
+		CapitalizePipe
 	],
 	exports: [
 		CommonModule,
-		DropdownDirective
+		DropdownDirective,
+		CapitalizePipe
 	]
 })
 export class SharedModule {
